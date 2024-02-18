@@ -14,10 +14,10 @@ const SideBar = ({ progress }) => {
                 <div className="w-6 h-6 rounded-full bg-white"></div>
                 <div className='text-2xl'>Chat<b>Sat</b></div>
             </div>
-            <div className='bg-white shadow-white shadow-sm bg-opacity-20 p-3 rounded-xl mt-4'>
+            <div className='bg-white shadow-gray-300 shadow-sm bg-opacity-10 p-3 rounded-xl mt-4'>
                 <h1 className='text-md'>New Thread</h1>
             </div>
-            <div className="bg-white bg-opacity-20 flex justify-center items-items mt-4 rounded-xl shadow-lg">
+            <div className="bg-white bg-opacity-10 flex justify-center items-items mt-4 rounded-xl shadow-lg">
                 <div className="relative h-32">
                     <svg className="w-full h-full" viewBox="0 0 100 100">
                         {/* Background circle */}
@@ -56,10 +56,9 @@ const SideBar = ({ progress }) => {
                 </div>
                 <div>
                     <div className='flex mt-8 leading-20'>
-                        <h1 className='text-xl'>0/233</h1>
-                        <h1 className='text-yellow text-xl'>XP</h1>
+                        <h1 className='text-xl'>0/233 <b className='text-yellow'>XP</b></h1>
                     </div>
-                    <div className='bg-white bg-opacity-20 rounded-lg mt-2 text-center text-yellow p-2 hover:cursor-pointer hover:scale-110 duration-300'>
+                    <div className='bg-white bg-opacity-10 rounded-lg mt-2 text-center text-yellow px-3 py-1 hover:cursor-pointer hover:bg-opacity-20 hover:scale-110 duration-300'>
                         Take a quiz
                     </div>
                 </div>
@@ -69,7 +68,7 @@ const SideBar = ({ progress }) => {
                 <div className='w-8 h-8 rounded-full bg-white'></div>
                 <h1>Name</h1>
             </div>
-            <div className="flex items-center gap-3 mt-2">
+            <div className="flex items-center gap-3 mt-2 hover:cursor-pointer">
                 <img src='/assets/logout.png' alt='Log Out' width={20} height={20} />
                 <h2>Sign out</h2>
             </div>
