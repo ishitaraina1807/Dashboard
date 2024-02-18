@@ -3,7 +3,9 @@
 @import 'tailwindcss/utilities';
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
 
-body{
-    background-color: #2a2a2a;
+body {
+    background: linear-gradient(45deg, #354740, #2d2d2d, #354740);
 }
+
+
 
