@@ -6,6 +6,11 @@
 body {
     background: linear-gradient(45deg, #354740, #2d2d2d, #354740);
 }
-
+.entries-container::-webkit-scrollbar {
+    display: none;
+  }
+  .leaderboard-container::-webkit-scrollbar {
+    display: none;
+  }
 
 
