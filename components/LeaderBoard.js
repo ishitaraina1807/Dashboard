@@ -18,12 +18,12 @@ const LeaderBoard = () => {
       xp: "0",
     },
     {
-      position: 5,
+      position: 4,
       name: 'Another User',
       xp: "0",
     },
     {
-      position: 6,
+      position: 5,
       name: 'Yet Another User',
       xp: "0",
     },
@@ -41,7 +41,7 @@ const LeaderBoard = () => {
         Leaderboard
       </div> 
 
-      <div className='leaderboard-container' style={{ height: '300px', overflowY: 'auto' }}> 
+      <div className='leaderboard-container' style={{ height: '260px', overflowY: 'auto' }}> 
       <div className='entries-container' style={{ maxHeight: '300px', overflowY: 'auto' }}>
         {users.map((user, index) => (
           <div
