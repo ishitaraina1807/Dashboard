@@ -1,18 +1,38 @@
-'use client'
-import React from 'react'
-import Image from 'next/image'
-import increase from '../public/assets/increase.png'
+'use client';
 
-const Box = ({Date, Title, Description}) => {
-  return (
-    <div className='bg-white xl:w-80 w-60 bg-opacity-10 py-3 px-8 shadow-xl border-gray-500 border-[0.1px] rounded-xl text-gray-400 hover:bg-opacity-20 hover:cursor-pointer hover:scale-110 duration-300'>
-      <p className='text-sm'>Last Practice Linear etc etc</p>
-      <p>{Date}</p>
-      <Image className='w-28' src={increase} alt='increase' />
-      <h1 className='text-2xl text-white'>{Title}</h1>
-      <p className='text-gray-300 text-sm mt-2'>{Description}</p>
-    </div>
-  )
-}
+import React from 'react';
+import { CheckCircle, Clock, AlertCircle } from 'lucide-react';
 
-export default Box
+const ContractBox = ({ image, date, title, description, status }) => {
+    // Status configuration
+    const statusConfig = {
+        'Completed': { color: 'text-green-500', icon: <CheckCircle className="text-green-500" /> },
+        'In Progress': { color: 'text-yellow-500', icon: <Clock className="text-yellow-500" /> },
+        'Pending': { color: 'text-red-500', icon: <AlertCircle className="text-red-500" /> }
+    };
+
+    const { color, icon: statusIcon } = statusConfig[status] || statusConfig['Pending'];
+
+    return (
+        <div className='bg-white bg-opacity-10 p-6 rounded-xl text-white hover:bg-opacity-20 hover:cursor-pointer transition-all duration-300 shadow-lg'>
+            <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center">
+                    <div className="mr-4">
+                        {image}
+                    </div>
+                    <div>
+                        <h2 className='text-2xl font-bold'>{title}</h2>
+                        <p className='text-sm text-gray-400'>Contract Date: {date}</p>
+                    </div>
+                </div>
+                <div className={`flex items-center ${color}`}>
+                    {statusIcon}
+                    <span className='ml-2 font-semibold'>{status}</span>
+                </div>
+            </div>
+            <p className='text-gray-300 mt-2'>{description}</p>
+        </div>
+    );
+};
+
+export default ContractBox;

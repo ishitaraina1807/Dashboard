@@ -1,76 +1,76 @@
-import React from 'react';
-import LeaderBoard from './LeaderBoard';
+'use client';
 
-const SideBar = ({ progress }) => {
-    const strokeDashoffset = 400 - (400 * progress) / 100;
+import React from 'react';
+import { Home, Book, Globe, User, LogOut } from 'lucide-react';
+
+const SideBar = () => {
     return (
         <div
-            className='md:h-[100vh] md:w-1/3 text-white shadow-xl p-8 font-sans'
+            className='md:h-screen md:w-1/3 text-white shadow-xl p-4 font-sans'
             style={{
                 background: 'linear-gradient(#354740, #2d2d2d)',
             }}
         >
-            <div className="flex text-white items-center gap-2">
-                <div className="w-6 h-6 rounded-full bg-white"></div>
-                <div className='text-2xl'>Chat<b>Sat</b></div>
+            <div className="flex text-white items-center gap-2 mb-8">
+                <img src="/api/placeholder/50/50" alt="Logo" className="w-12 h-12" />
+                <div className='text-3xl'>KRISHIमंडी</div>
             </div>
-            <div className='bg-white shadow-gray-300 shadow-sm bg-opacity-10 p-3 rounded-xl mt-4'>
-                <h1 className='text-md'>New Thread</h1>
-            </div>
-            <div className="bg-white bg-opacity-10 flex justify-center items-items mt-4 rounded-xl shadow-lg">
-                <div className="relative h-32">
-                    <svg className="w-full h-full" viewBox="0 0 100 100">
-                        {/* Background circle */}
-                        <circle
-                            className="text-gray-700 stroke-current"
-                            strokeWidth="8"
-                            cx="50"
-                            cy="50"
-                            r="30"
-                            fill="transparent"
-                        />
-                        {/* Progress circle */}
-                        <circle
-                            className="text-yellow progress-ring__circle stroke-current"
-                            strokeWidth="8"
-                            strokeLinecap="round"
-                            cx="50"
-                            cy="50"
-                            r="30"
-                            fill="transparent"
-                            strokeDasharray="400"
-                            strokeDashoffset={strokeDashoffset}
-                        />
-                        {/* Center text */}
-                        <text
-                            x="50"
-                            y="50"
-                            fontSize="12"
-                            textAnchor="middle"
-                            alignmentBaseline="middle"
-                            fill="white"
-                        >
-                            {`4/7`}
-                        </text>
-                    </svg>
-                </div>
+
+            <div className='space-y-6'>
+                {/* Home */}
+                <button className='flex items-center gap-4 w-full bg-white bg-opacity-10 p-4 rounded-xl'>
+                    <Home size={24} />
+                    <span className='text-xl'>Home</span>
+                </button>
+
+                {/* Contracts */}
                 <div>
-                    <div className='flex mt-8 leading-20'>
-                        <h1 className='text-xl'>0/233 <b className='text-yellow'>XP</b></h1>
-                    </div>
-                    <div className='bg-white bg-opacity-10 rounded-lg mt-2 text-center text-yellow px-3 py-1 hover:cursor-pointer hover:bg-opacity-20 hover:scale-110 duration-300'>
-                        Take a quiz
+                    <button className='flex items-center gap-4 w-full bg-white bg-opacity-10 p-4 rounded-xl'>
+                        <Book size={24} />
+                        <span className='text-xl'>Contracts</span>
+                    </button>
+                    <div className='mt-2 ml-12 space-y-2'>
+                        <div className='flex items-center gap-2'>
+                            <div className='w-3 h-3 rounded-full bg-green-400'></div>
+                            <span>Total Contracts: 5</span>
+                        </div>
+                        <div className='flex items-center gap-2'>
+                            <div className='w-3 h-3 rounded-full bg-yellow-400'></div>
+                            <span>Active Contracts: 2</span>
+                        </div>
+                        <div className='flex items-center gap-2'>
+                            <div className='w-3 h-3 rounded-full bg-blue-400'></div>
+                            <span>Ongoing Delivery: 1</span>
+                        </div>
                     </div>
                 </div>
+
+                {/* Language Selector */}
+                <div>
+                    <button className='flex items-center gap-4 w-full bg-white bg-opacity-10 p-4 rounded-xl'>
+                        <Globe size={24} />
+                        <span className='text-xl'>Language</span>
+                    </button>
+                    <select className='mt-2 w-full p-3 rounded-lg bg-gray-800 text-white text-lg'>
+                        <option value="English">English</option>
+                        <option value="Hindi">Hindi</option>
+                        <option value="Marathi">Marathi</option>
+                        <option value="Tamil">Tamil</option>
+                        <option value="Telugu">Telugu</option>
+                    </select>
+                </div>
             </div>
-            <LeaderBoard />
-            <div className='flex items-center gap-3 mt-4'>
-                <div className='w-8 h-8 rounded-full bg-white'></div>
-                <h1>Name</h1>
-            </div>
-            <div className="flex items-center gap-3 mt-2 hover:cursor-pointer">
-                <img src='/assets/logout.png' alt='Log Out' width={20} height={20} />
-                <h2>Sign out</h2>
+
+            <div className='mt-8 space-y-4'>
+                <div className='flex items-center gap-4 bg-white bg-opacity-10 p-4 rounded-xl'>
+                    <User size={24} />
+                    <span className='text-xl'>Farmer Name</span>
+                </div>
+
+                <button className="flex items-center gap-4 w-full bg-red-500 bg-opacity-80 p-4 rounded-xl">
+                    <LogOut size={24} />
+                    <span className='text-xl'>Sign Out</span>
+                </button>
             </div>
         </div>
     );
